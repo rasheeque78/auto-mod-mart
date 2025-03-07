@@ -146,17 +146,17 @@ const ProductFilters = ({ onFilterChange }: ProductFiltersProps) => {
           return range ? range.value : null;
         }).filter(Boolean);
         
-    // Get actual brand names from IDs
+    // Fix: Get actual brand names from IDs
     const brandValues = brands.map(id => {
       const brand = brands.find(b => b.id === id);
       return brand ? brand.label : null;
-    }).filter(Boolean);
+    }).filter(Boolean) as string[];
     
-    // Get actual make names from IDs
+    // Fix: Get actual make names from IDs
     const makeValues = makes.map(id => {
       const make = carMakes.find(m => m.id === id);
       return make ? make.label : null;
-    }).filter(Boolean);
+    }).filter(Boolean) as string[];
     
     onFilterChange({
       price: priceRangeValues,
