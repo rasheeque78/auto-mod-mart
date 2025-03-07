@@ -82,6 +82,14 @@ const Header = () => {
                   {category.name}
                 </Link>
               ))}
+              <Link
+                to="/account"
+                className="text-gray-300 hover:text-white text-sm font-medium transition-colors flex items-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <User size={16} className="mr-2" />
+                My Account
+              </Link>
             </nav>
           </div>
         </div>
